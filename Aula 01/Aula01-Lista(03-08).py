@@ -1,7 +1,7 @@
 import os, sys
 from time import sleep
 
-
+# Leia dois números e exiba a soma, subtração, multiplicação e divisão.
 def ex1():
     x = int(input('Digite um número: '))
     y = int(input('Digite outro número: '))
@@ -10,12 +10,14 @@ def ex1():
     print(f'A multiplicação entre {x} e {y} é: {x*y}')
     print(f'A divisão entre {x} e {y} é: {x/y}')
 
+# Leia o nome e a idade de uma pessoa e exiba uma mensagem com essas informações
 def ex2():
     nome = input('Digite seu nome: ')
     idade = input('Digite sua idade: ')
     print(f'Olá, {nome}! Você tem {idade} anos!')
     pass
 
+# Leia um número e informe se ele é positivo, negativo ou zero.
 def ex3():
     x = float(input('Digite um número Real: '))
 
@@ -26,6 +28,7 @@ def ex3():
     else:
         print(f'{x} é um número Neutro!')
 
+# Leia a nota de um aluno e informe se ele foi aprovado (nota ≥ 7) ou reprovado.
 def ex4():
     nota = float(input('Informe a nota do aluno: '))
     if nota >= 7:
@@ -33,11 +36,13 @@ def ex4():
     else:
         print('Aluno reprovado!')
 
+# Leia um número inteiro e mostre sua tabuada de 1 a 10.
 def ex5():
     n = int(input('Informe um número inteiro: '))
     for i in range(1,11):
         print(f'{n} x {i:<2} = {n*i}')
 
+# Leia um número N e calcule a soma dos números de 1 até N
 def ex6():
     n = int(input('Digite um número inteiro positivo: '))
     soma = 0
@@ -45,6 +50,7 @@ def ex6():
         soma += i
     print(f'A soma dos números entre 1 e {n} é: {soma}')
 
+# Leia 10 números e informe a soma e a média.
 def ex7():
     numeros = []
     for i in range(1,11):
@@ -53,6 +59,7 @@ def ex7():
     print(f'A soma entre os números {numeros} é:  {sum(numeros)}')
     print(f'A média entre os números {numeros} é: {sum(numeros)/len(numeros)}')
 
+# Leia vários números até que o usuário digite 0. Ao final, informe a soma dos valores digitados.
 def ex8():
     x = 1
     soma = 0
@@ -65,12 +72,13 @@ def ex8():
             continue
         else:
             soma += x
-
+# Crie uma função que receba dois números e retorne o maior deles
 def ex9():
     x = int(input('Digite um número: '))
     y = int(input('Digite outro número: '))
     print(f'O maior número entre {x} e {y} é: {maior(x,y)}')
 
+# Desafio: Faça um programa que leia 5 números e informe o maior e o menor valor.
 def ex10():
     x = []
     for i in range(1,6):
@@ -78,13 +86,16 @@ def ex10():
     print(f'O menor número em {x} é: {menor(*x)}')
     print(f'O maior número em {x} é: {maior(*x)}')
 
+# def a ser uada no exercicio 10
 def menor(*x):
     return min(x)
 
+# def a ser uada nos exercicios 09 e 10
 def maior(*x):
     return max(x)
 
 
+# Menu para escolher qual exercicio deseja executar
 def inicial():
     finalizar = False
 
