@@ -1,0 +1,21 @@
+import random
+import time
+
+iteracoes = 1000000
+
+def calcular_media(x):
+    soma = 0
+    t_inicio = time.time()
+
+    for i in range(x):
+        soma += random.uniform(1,101)
+    media = soma/x
+
+    t_fim = time.time()
+    t = t_fim - t_inicio
+
+    return media, t
+
+media, tempo = calcular_media(iteracoes)
+print(media)
+print(f'{tempo:.2f}')
