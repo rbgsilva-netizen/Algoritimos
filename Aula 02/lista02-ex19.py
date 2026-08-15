@@ -103,7 +103,7 @@ def menu():
             return True
     print()
     input(f'{c_azul}Pressione [Enter] para voltar ao menu inicial.{c_clr}')
-    return encerra
+    return False
     
 
 while not encerra:
