@@ -10,8 +10,8 @@ for i in lista:
     for j in i:
         print(j,end=' ')
         somal += j
-    print(f'\t\tsoma da linha: {somal}')
+    print(f'\tsoma da linha: {somal}')
     somaf += somal
     somal = 0
 
-print(f'\t\tSoma de todos os elementos: {somaf}')
+print(f'Soma de todos os elementos: {somaf}')
