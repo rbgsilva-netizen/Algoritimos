@@ -13,25 +13,27 @@ ops = ['Consultar produto',
        'Exibir produto com maior estoque']
 estoque_minimo = 0
 estoque_maximo = 9999
-encerra = ''
+encerra = False
 
-# Colorir mensagens de erro em vemelho
-def msg_erro(txt):
-    return f'\033[31m {txt} \033[m'
+c_vermelho = "\033[31m"
+c_verde = "\033[32m"
+c_amarelo = "\033[33m"
+c_azul = "\033[34m"
+c_clr = "\033[m"
 
 # Valida uma entrada como número e dentro de um limite, quando definido
 def validar_op(numero,inicio=0,fim=0):
     try:
         numero = int(numero)
     except:
-        print(msg_erro('Valor Inválido'))
+        print(c_vermelho,'Valor Inválido',c_clr)
         return numero, False
     else:
         if inicio!=0 or fim!=0:
             if numero in range(inicio,fim):
                 return numero, True
             else:
-                print(msg_erro(f'Valor fora do limite ({inicio} à {fim-1})!'))
+                print(c_vermelho,f'Valor fora do limite ({inicio} à {fim-1})!',c_clr)
                 return numero, False
         else:
             return numero, True
@@ -54,12 +56,12 @@ def alterar_produto():
     
     esc_valida = False
     while not esc_valida:
-        novo_estoque = input(f'Qual o novo estoque do produto \033[33m{produtos[escolha]}\033[m: ')
+        novo_estoque = input(f'Qual o novo estoque do produto {c_amarelo}{produtos[escolha]}{c_clr}: ')
         novo_estoque, esc_valida = validar_op(novo_estoque,0,100000)
     print('='*50)
     quant[escolha] = novo_estoque
 
-    print(f'\033[1;32m Estoque atualizado com sucesso: {produtos[escolha]} : {quant[escolha]}\033[m')
+    print(f'{c_verde} Estoque atualizado com sucesso: {produtos[escolha]} : {quant[escolha]}{c_clr}')
 
 
 def menu():
@@ -98,14 +100,13 @@ def menu():
             os.system('cls')
             consultar_produto(max(quant), estoque_maximo)
         case 0:
-            encerra = 'sair'
-            return encerra
+            return True
     print()
-    encerra = input('\033[34mPressione [Enter] para voltar ao menu inicial ou digite "sair" para encerrar.\033[m').lower()
+    input(f'{c_azul}Pressione [Enter] para voltar ao menu inicial.{c_clr}')
     return encerra
     
 
-while encerra != 'sair':
+while not encerra:
     encerra = menu()
 
-print(msg_erro('Programa encerrado...'))
+print(c_vermelho,'Programa encerrado...',c_clr)
