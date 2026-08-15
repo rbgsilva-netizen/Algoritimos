@@ -100,8 +100,8 @@ def menu():
         case 0:
             encerra = 'sair'
             return encerra
-
-    encerra = input('Pressione [Enter] para voltar ao menu inicial ou digite "sair" para encerrar.').lower()
+    print()
+    encerra = input('\033[34mPressione [Enter] para voltar ao menu inicial ou digite "sair" para encerrar.\033[m').lower()
     return encerra
     
 
