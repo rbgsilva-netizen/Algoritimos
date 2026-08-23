@@ -1,0 +1,61 @@
+@startuml
+left to right direction
+
+skinparam packageStyle rectangle
+skinparam shadowing true
+
+actor Cliente
+actor Restaurante
+actor Entregador
+
+rectangle "GOFOOD - Sistema de Delivery de Comida" {
+
+    usecase "Realizar login" as UC1
+    usecase "Pesquisar produtos" as UC2
+    usecase "Filtrar produtos\npor categoria" as UC3
+    usecase "Visualizar detalhes\ndo produto" as UC4
+    usecase "Adicionar produto\nao carrinho" as UC5
+    usecase "Gerenciar carrinho" as UC6
+    usecase "Finalizar pedido" as UC7
+    usecase "Acompanhar pedido" as UC8
+
+    usecase "Gerenciar produtos" as UC9
+    usecase "Receber pedido" as UC10
+    usecase "Atualizar status\ndo pedido" as UC11
+
+    usecase "Visualizar entrega" as UC12
+    usecase "Aceitar entrega" as UC13
+    usecase "Atualizar status\nda entrega" as UC14
+
+    usecase "Realizar pagamento" as UC15
+}
+
+' Cliente
+Cliente --> UC1
+Cliente --> UC2
+Cliente --> UC3
+Cliente --> UC4
+Cliente --> UC5
+Cliente --> UC6
+Cliente --> UC7
+Cliente --> UC8
+
+' Restaurante
+Restaurante --> UC9
+Restaurante --> UC10
+Restaurante --> UC11
+
+' Entregador
+Entregador --> UC12
+Entregador --> UC13
+Entregador --> UC14
+
+' Relacoes entre casos de uso
+UC7 .> UC6 : <<include>>
+UC7 .> UC15 : <<include>>
+
+' Atualizacoes do pedido para acompanhamento
+UC11 .> UC8 : <<include>>
+UC14 .> UC8 : <<include>>
+
+@enduml
