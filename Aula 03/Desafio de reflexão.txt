@@ -1,0 +1,7 @@
+Desafio de reflexão:
+Explique, com suas próprias palavras, em quais situações a busca sequencial é mais adequada e em quais situações a busca binária apresenta vantagem.
+Considere também a necessidade de a lista estar ordenada.
+
+A busca sequencial é mais adequada para listas pequenas, não ordenadas ou quando os dados mudam constantemente.
+Já a busca binária é melhor indicada para listas muito extensas, já ordenadas e quando será necessário fazer muitas buscas.
+Deve-se levar em consideração o custo computacional de se ordenar listas muito grandes com a finalidade de utilizar a busca binária.
