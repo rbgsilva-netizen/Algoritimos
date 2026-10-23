@@ -2,7 +2,7 @@ import random
 import os
 
 
-matriz = [["O" for j in range(5)] for i in range(5) ]
+matriz = [["?" for j in range(5)] for i in range(5) ]
 linha_random = random.randint(0,4)
 coluna_random = random.randint(0,4)
 tentativas = 0
@@ -13,8 +13,8 @@ def gerarmatriz():
     os.system('cls')
     global tentativas
     titulo = "Caça ao tesouro"
-    print(titulo.center(25))
-    print('='*25)
+    print(f"{titulo.center(22)}")
+    print('='*22)
     print('\033[33m    1   2   3   4   5\033[m')
     for k, v in enumerate(matriz):
         print()
@@ -25,9 +25,9 @@ def gerarmatriz():
             elif j == "T":
                 print(f'\033[32m{j:>4}\033[m',end='')
             else:
-                print(f'{j:>4}',end='')
+                print(f'\033[34m{j:>4}\033[m',end='')
         print()
-    print('='*25)
+    print('='*22)
     print(f'Tentativas: {tentativas}')
     print(f'Status: {status}')
     print()
