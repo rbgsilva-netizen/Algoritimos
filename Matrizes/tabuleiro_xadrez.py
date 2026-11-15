@@ -1,6 +1,6 @@
 import os
 
-# matriz = [["███" if (j+i) % 2 == 0 else "   " for j in range(8)] for i in range(8)]
+#matriz = [["███" if (j+i) % 2 == 0 else "   " for j in range(8)] for i in range(8)]
 matriz = [[" . " for j in range(8)] for i in range(8)]
 movimentos = [(2,1),(2,-1),(-2,1),(-2,-1),(1,2),(1,-2),(-1,2),(-1,-2)]
 cred = "\033[31m"
