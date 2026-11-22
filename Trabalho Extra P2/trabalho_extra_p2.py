@@ -43,11 +43,9 @@ algoritmos = {1:funcoes.selectionSort,
         }
 
 
-
-
 while not encerrar:
     funcoes.gerarMenu(menu_p)
-    print(f"Número de elemntos da lista: {n}")
+    print(f"Número de elemntos da lista: {n:,.0f}")
     if n <=20:
         print(f'Lista desordenada: {lista_desordenada}')
         print(f'Lista ordenada: {lista_ordenada}')
